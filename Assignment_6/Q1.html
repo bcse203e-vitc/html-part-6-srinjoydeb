@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Largest Number</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Largest Number</title>
     
 </head>
 <body>
 
-    <h2>Find the Largest Number</h2>
-    <p>Enter numbers separated by commas:</p>
-    <input type="text" id="numbersInput" placeholder="e.g. 12, 45, 78, 23">
-    <br>
-    <button onclick="findLargest()">Find Largest</button>
+<h2>Find the Largest Number</h2>
+<p>Enter numbers separated by commas:</p>
+<input type="text" id="numbersInput" placeholder="e.g. 12, 45, 78, 23">
+<br>
+<button onclick="findLargest()">Find Largest</button>
     
-    <p id="result"></p>
+<p id="result"></p>
 
-    <script>
-        function findLargest() {
-            // Get input value
+<script>
+function findLargest() {
+            
             let input = document.getElementById("numbersInput").value;
             
-            // Convert input string to an array of numbers
+           
             let numbers = input.split(",").map(num => parseFloat(num.trim()));
             
-            // Check for valid input
+            
             if (numbers.some(isNaN)) {
                 document.getElementById("result").innerText = "Please enter valid numbers!";
                 return;
             }
             
-            // Find the largest number
+           
             let largest = Math.max(...numbers);
             
-            // Display the result
+           
             document.getElementById("result").innerText = "The largest number is: " + largest;
         }
     </script>
